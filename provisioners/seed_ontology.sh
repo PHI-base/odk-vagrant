@@ -7,7 +7,7 @@ if [[ ":$PATH:" != *":$PWD/bin:"* ]]; then
   # must run it manually here instead.
   touch /etc/profile.d/osk.sh \
   && echo "PATH=\$PATH:\$PWD/bin" > /etc/profile.d/osk.sh
-  source ~/.profile
+  source /etc/profile.d/osk.sh
 fi
 
 sudo ./seed-my-ontology-repo.pl \
