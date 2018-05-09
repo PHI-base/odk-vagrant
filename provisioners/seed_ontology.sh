@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 cd /home/ontology-starter-kit-1.0.2
 
