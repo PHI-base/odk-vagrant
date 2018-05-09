@@ -1,4 +1,4 @@
-!#/usr/bin/sh
+!#/bin/sh
 
 # Remove any existing versions of wget
 apt-get remove wget
