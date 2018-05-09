@@ -2,13 +2,13 @@
 
 cd /home/ontology-starter-kit-1.0.2
 
-# Needed to fix a string concatenation error in seed-my-ontology-repo.pl
-export PWD=`pwd`
+# seed-my-ontology-repo.pl tries (and fails) to do this step itself, so we
+# must run it manually here instead.
+PATH=$PATH:$PWD/bin
 
-# The -E flag is needed to preserve environment variables
-sudo -E bash -c './seed-my-ontology-repo.pl \
+sudo ./seed-my-ontology-repo.pl \
   -d chebi -d pato -d go \
   -u jseager7 \
   -t "PHIPO" \
   -c \
-  phipo'
+  phipo
