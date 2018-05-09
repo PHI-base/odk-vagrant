@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.define "ontology-starter"
-  config.vm.hostname = "osk"
   
   config.vm.provider "virtualbox" do |v|
     # required for Java Runtime Environment memory allocation
