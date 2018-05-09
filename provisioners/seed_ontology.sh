@@ -1,16 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /home/ontology-starter-kit-1.0.2
 
-if [[ ":$PATH:" != *":$PWD/bin:"* ]]; then
-  # seed-my-ontology-repo.pl tries (and fails) to do this step itself, so we
-  # must run it manually here instead.
-  touch /etc/profile.d/osk.sh \
-  && echo "PATH=\$PATH:\$PWD/bin" > /etc/profile.d/osk.sh
-  source /etc/profile.d/osk.sh
-fi
-
-sudo ./seed-my-ontology-repo.pl \
+sudo PATH=$PATH:$PWD/bin ./seed-my-ontology-repo.pl \
   -d chebi -d pato -d go \
   -u jseager7 \
   -t "PHIPO" \
