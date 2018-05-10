@@ -14,7 +14,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioners/install_git.sh"
   config.vm.provision "shell", path: "./provisioners/install_wget_1-16.sh"
   
-  config.vm.provision "shell", path: "./provisioners/get_starter_pack.sh"
+  config.vm.provision "starterpack",
+    type: "shell",
+    path: "./provisioners/get_starter_pack.sh"
   
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "./data", "/vagrant"
