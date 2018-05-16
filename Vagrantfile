@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     type: "shell",
     path: "./provisioners/get_starter_pack.sh"
   
-  config.vm.provision "set_git_user"
+  config.vm.provision "set_git_user",
     type: "shell",
     path: "./provisioners/set_git_user.sh",
     args: [settings['git']['user'], settings['git']['email']]
