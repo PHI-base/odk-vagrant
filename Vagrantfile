@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+settings = YAML.load_file './vagrant_config.yaml'
+
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.define "ontology-starter"
@@ -17,6 +20,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "starterpack",
     type: "shell",
     path: "./provisioners/get_starter_pack.sh"
+  
+  config.vm.provision "set_git_user"
+    type: "shell",
+    path: "./provisioners/set_git_user.sh",
+    args: [settings['git']['user'], settings['git']['email']]
   
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "./share", "/vagrant"
