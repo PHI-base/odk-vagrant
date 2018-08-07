@@ -5,7 +5,7 @@ require 'yaml'
 settings = YAML.load_file './vagrant_config.yaml'
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.define "ontology-starter"
 
   config.vm.provider "virtualbox" do |v|
