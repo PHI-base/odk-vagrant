@@ -24,6 +24,10 @@ Vagrant.configure("2") do |config|
     type: "shell",
     path: "./provisioners/get_starter_pack.sh"
 
+  config.vm.provision "install_deps",
+    type: "shell",
+    path: "./provisioners/install_deps.sh"
+
   config.vm.provision "seed_ontology",
     type: "shell",
     path: "./provisioners/seed_ontology.sh"
