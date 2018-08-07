@@ -1,15 +1,18 @@
 #!/bin/sh
 
-cd /home/
+# Add the Java 8 PPA repository
+tee /etc/apt/sources.list.d/java-8-debian.list <<EOF
+deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
+deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
+EOF
 
-# Download JDK 8
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.tar.gz
-# Extract the downloaded tar file
-tar -zxvf jdk-8u*-linux-*.tar.gz
-# Move the JDK to /usr/
-mv jdk1.8.*/ /usr/
-# Install
-update-alternatives --install /usr/bin/java java /usr/jdk1.8.*/bin/java 2
-update-alternatives --config java
-# Remove the tar file
-rm jdk-8u*-linux-*.tar.gz
+# Add a key to validate the packages
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+
+# Automatically accept the Oracle license
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+
+# Install the JDK
+apt-get update
+apt-get install -y oracle-java8-installer
