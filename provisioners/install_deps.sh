@@ -19,3 +19,6 @@ wget --secure-protocol=TLSv1_2 https://github.com/INCATools/dosdp-tools/releases
   && PATH="$PWD/bin/dosdp-tools/bin:$PATH"
 
 wget https://raw.githubusercontent.com/INCATools/dead_simple_owl_design_patterns/master/src/simple_pattern_tester.py -O bin/simple_pattern_tester.py
+
+# Lazy hack to prevent permissions issues when running binaries
+chmod -R 777 /home/vagrant/ontology-development-kit-*
