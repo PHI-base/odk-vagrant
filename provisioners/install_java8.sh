@@ -15,4 +15,4 @@ echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-se
 
 # Install the JDK
 apt-get update
-apt-get install -y oracle-java8-installer
+apt-get -y install oracle-java8-installer

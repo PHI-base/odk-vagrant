@@ -1,3 +1,3 @@
 #!/bin/sh
 
-apt-get install git -y
+apt-get -y install git 
