@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/vagrant/ontology-starter-kit-*/target/phipo
+cd /home/vagrant/ontology-development-kit-*/target/phipo
 
 # Rewrite the existing commits to use the correct author
 git filter-branch --commit-filter '
