@@ -16,6 +16,6 @@ wget https://raw.githubusercontent.com/ontodev/robot/v1.1.0/bin/robot -O bin/rob
 wget --secure-protocol=TLSv1_2 https://github.com/INCATools/dosdp-tools/releases/download/v0.9/dosdp-tools-0.9.tgz \
   && tar -zxvf dosdp-tools-0.9.tgz \
   && mv dosdp-tools-0.9 bin/dosdp-tools \
-  && PATH="$(pwd)/bin/dosdp-tools/bin:$PATH"
+  && PATH="$PWD/bin/dosdp-tools/bin:$PATH"
 
 wget https://raw.githubusercontent.com/INCATools/dead_simple_owl_design_patterns/master/src/simple_pattern_tester.py -O bin/simple_pattern_tester.py
