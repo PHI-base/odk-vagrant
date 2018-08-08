@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/ontology-development-kit-*
+cd /home/vagrant/ontology-development-kit-*
 test -d bin || mkdir -p bin
  
 # Install OWLTools

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/
+cd /home/vagrant/
 
 # Note that you must have wget version 1.16 or later installed:
 # earlier versions of wget do not support TLS v1.2
