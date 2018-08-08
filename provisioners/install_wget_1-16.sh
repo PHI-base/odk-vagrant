@@ -3,6 +3,9 @@
 # Remove any existing versions of wget
 apt-get remove wget
 
+# Install shared libraries for OpenSSL
+apt-get -y install libssl-dev
+
 # Install wget version 1.16 (needed for TLS v1.2)
 apt-get update
 apt-get build-dep wget
