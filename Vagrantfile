@@ -18,7 +18,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "./provisioners/install_java8.sh"
   config.vm.provision "shell", path: "./provisioners/install_git.sh"
-  config.vm.provision "shell", path: "./provisioners/install_wget_1-16.sh"
+  
+  config.vm.provision "install_wget",
+    type: "shell",
+    path: "./provisioners/install_wget_1-16.sh"
 
   config.vm.provision "starter_pack",
     type: "shell",
