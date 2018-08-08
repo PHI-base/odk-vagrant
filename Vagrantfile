@@ -31,13 +31,18 @@ Vagrant.configure("2") do |config|
     type: "shell",
     path: "./provisioners/install_deps.sh"
 
+  config.vm.provision "set_git_user",
+    type: "shell",
+    path: "./provisioners/set_git_user.sh",
+    args: [settings['git']['user'], settings['git']['email']]
+    
   config.vm.provision "seed_ontology",
     type: "shell",
     path: "./provisioners/seed_ontology.sh"
 
-  config.vm.provision "set_git_user",
+  config.vm.provision "rewrite_commits",
     type: "shell",
-    path: "./provisioners/set_git_user.sh",
+    path: "./provisioners/rewrite_commits.sh",
     args: [settings['git']['user'], settings['git']['email']]
 
 end
