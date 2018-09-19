@@ -10,7 +10,7 @@ end
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.define "ontology-starter"
+  config.vm.define "odk"
 
   config.vm.provider "virtualbox" do |v|
     # required for Java Runtime Environment memory allocation
