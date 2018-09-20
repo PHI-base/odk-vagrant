@@ -1,3 +1,2 @@
 .vagrant/
-share/
-vagrant_config.yaml
+config.yaml
