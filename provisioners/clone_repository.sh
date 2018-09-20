@@ -11,5 +11,5 @@ git clone ${REPO_URL}
 chown -R vagrant:vagrant phipo
 
 # Ensure all the script files in the ontology directory are executable.
-cd /phipo/src/ontology
+cd phipo/src/ontology
 chmod +x *.sh
