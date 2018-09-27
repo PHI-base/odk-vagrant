@@ -8,6 +8,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "debian/jessie64"
   config.vm.define "odk"
+  
+  config.vm.provider "virtualbox" do |v|
+    # required for Java Runtime environment memory allocation
+    v.memory = 2048
+  end
 
   config.vm.provision "install_docker",
     type: "shell",
