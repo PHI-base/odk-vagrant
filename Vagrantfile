@@ -26,8 +26,6 @@ Vagrant.configure("2") do |config|
     create: true,
     type: "virtualbox"
 
-  config.vm.provision "install_docker",
-    type: "shell",
-    path: "./provisioners/install_docker.sh"
+  config.vm.provision "docker"
 
 end
