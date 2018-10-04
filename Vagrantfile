@@ -7,7 +7,8 @@ settings = YAML.load_file './config.yaml'
 Vagrant.configure("2") do |config|
 
   config.vm.box = "debian/jessie64"
-  config.vm.define "odk"
+  config.vm.define "odk-vm"
+  config.vm.hostname = "odk-vm"
   
   config.vm.provider "virtualbox" do |v|
     # required for the ODK to not crash when generating import files from
