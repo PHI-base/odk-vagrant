@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
     # larger ontologies (such as GO or ChEBI)
     v.memory = 8192
   end
+  
+  config.vagrant.plugins = "vagrant-vbguest"
 
   config.vm.synced_folder "./share", "/vagrant",
     create: true,
