@@ -18,6 +18,10 @@ Vagrant.configure("2") do |config|
   
   config.vagrant.plugins = "vagrant-vbguest"
 
+  config.vm.synced_folder "./ontology", "/home/vagrant",
+    create: true,
+    type: "virtualbox"
+  
   config.vm.synced_folder "./share", "/vagrant",
     create: true,
     type: "virtualbox"
@@ -25,10 +29,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "install_docker",
     type: "shell",
     path: "./provisioners/install_docker.sh"
-
-  config.vm.provision "clone_ontology_repo",
-    type: "shell",
-    path: "./provisioners/clone_repository.sh",
-    args: [settings['repository_url']]
 
 end
