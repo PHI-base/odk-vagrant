@@ -10,8 +10,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "odk"
   
   config.vm.provider "virtualbox" do |v|
-    # required for Java Runtime environment memory allocation
-    v.memory = 2048
+    # required for the ODK to not crash when generating import files from
+    # larger ontologies (such as GO or ChEBI)
+    v.memory = 8192
   end
 
   config.vm.synced_folder "./share", "/vagrant",
