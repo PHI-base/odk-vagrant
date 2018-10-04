@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   
   config.vagrant.plugins = "vagrant-vbguest"
 
-  config.vm.synced_folder "./ontology", "/home/vagrant",
+  config.vm.synced_folder "./ontology", "/home/vagrant/ontology",
     create: true,
     type: "virtualbox"
   
